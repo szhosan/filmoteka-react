@@ -3,9 +3,11 @@ import Header from "./components/Header/Header.jsx";
 import "./sass/main.scss";
 function App() {
   return (
-    <Container>
-      <Header />
-    </Container>
+    <header className="header">
+      <Container>
+        <Header />
+      </Container>
+    </header>
   );
 }
 

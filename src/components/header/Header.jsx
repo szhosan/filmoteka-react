@@ -1,29 +1,31 @@
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
-    <header className="header">
+    <>
       <div className="container header-container">
         <div className="header-nav__container">
           <div className="header-logo">
-            <a className="header-logo__link" href="#">
+            <Link to="/" className="header-logo__link">
               <svg className="header-logo__svg" width="24px" height="24px">
-                <use href="./images/svg/header.svg#icon-logo"></use>
+                <use href="../../images/svg/header.svg#icon-logo"></use>
               </svg>
               <h2 className="header-logo__text">Filmoteka</h2>
-            </a>
+            </Link>
           </div>
           <nav className="header-nav">
             <ul className="header-nav__list">
               <li className="header-nav__item header-nav__isActive js-header-nav__home">
-                <a className="header-nav__item-link" href="#">
+                <Link to="/" className="header-nav__item-link">
                   {" "}
                   HOME{" "}
-                </a>
+                </Link>
               </li>
               <li className="header-nav__item js-header-nav__myLib">
-                <a className="header-nav__item-link" href="#">
+                <Link to="/library" className="header-nav__item-link">
                   {" "}
                   MY LIBRARY{" "}
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
@@ -34,7 +36,7 @@ const Header = () => {
           <span className="switch-theme__slider"></span>
         </label>
       </div>
-    </header>
+    </>
   );
 };
 
