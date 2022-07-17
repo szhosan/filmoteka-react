@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ReactSVG } from "react-svg";
+import SVGLogo from "../../images/svg/header.svg";
 
 const Header = () => {
   return (
@@ -8,12 +8,9 @@ const Header = () => {
         <div className="header-nav__container">
           <div className="header-logo">
             <Link to="/" className="header-logo__link">
-              <ReactSVG
-                width="24px"
-                height="24px"
-                className="header-logo__svg"
-                src="../../images/svg/header.svg#icon-logo"
-              ></ReactSVG>
+              <svg className="header-logo__svg" width="24px" heigh="24px">
+                <use href={`${SVGLogo}#icon-logo`} />
+              </svg>
               <h2 className="header-logo__text">Filmoteka</h2>
             </Link>
           </div>
