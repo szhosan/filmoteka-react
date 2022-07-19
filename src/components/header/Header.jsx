@@ -1,5 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import SVGLogo from "../../images/svg/header.svg";
+import HeaderHomeSearchField from "./HeaderHomeSearchField";
+import HeaderLibraryNavBtns from "./HeaderLibraryNavBtns";
 
 const Header = () => {
   return (
@@ -45,7 +48,12 @@ const Header = () => {
             </ul>
           </nav>
         </div>
-        <div className="js-container-markup"></div>
+        <div className="js-container-markup">
+          <Routes>
+            <Route path="/" element={<HeaderHomeSearchField />} />
+            <Route path="/library" element={<HeaderLibraryNavBtns />} />
+          </Routes>
+        </div>
         <label className="switch-theme">
           <input type="checkbox" id="switch" name="theme" />
           <span className="switch-theme__slider"></span>
