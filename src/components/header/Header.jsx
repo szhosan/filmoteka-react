@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import SVGLogo from "../../images/svg/header.svg";
 
 const Header = () => {
@@ -16,17 +16,31 @@ const Header = () => {
           </div>
           <nav className="header-nav">
             <ul className="header-nav__list">
-              <li className="header-nav__item header-nav__isActive js-header-nav__home">
-                <Link to="/" className="header-nav__item-link">
+              <li className="header-nav__item js-header-nav__home">
+                <NavLink
+                  to="/"
+                  className={(navData) =>
+                    navData.isActive
+                      ? "header-nav__item-link header-nav__isActive"
+                      : "header-nav__item-link"
+                  }
+                >
                   {" "}
                   HOME{" "}
-                </Link>
+                </NavLink>
               </li>
               <li className="header-nav__item js-header-nav__myLib">
-                <Link to="/library" className="header-nav__item-link">
+                <NavLink
+                  to="/library"
+                  className={(navData) =>
+                    navData.isActive
+                      ? "header-nav__item-link header-nav__isActive"
+                      : "header-nav__item-link"
+                  }
+                >
                   {" "}
                   MY LIBRARY{" "}
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </nav>
