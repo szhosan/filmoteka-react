@@ -1,9 +1,4 @@
-import { useLocation } from "react-router-dom";
-
 const HeaderLibraryNavBtns = () => {
-  const { pathname } = useLocation();
-  console.log(pathname);
-
   return (
     <div className="header-filter">
       <button className="header-filter__btn" name="watched-btn">
