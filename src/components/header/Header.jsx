@@ -4,6 +4,11 @@ import SVGLogo from "../../images/svg/header.svg";
 import HeaderHomeSearchField from "./HeaderHomeSearchField";
 import HeaderLibraryNavBtns from "./HeaderLibraryNavBtns";
 
+const activeLinkHighlight = (navData) =>
+  navData.isActive
+    ? "header-nav__item-link header-nav__isActive"
+    : "header-nav__item-link";
+
 const Header = () => {
   return (
     <>
@@ -20,27 +25,13 @@ const Header = () => {
           <nav className="header-nav">
             <ul className="header-nav__list">
               <li className="header-nav__item js-header-nav__home">
-                <NavLink
-                  to="/"
-                  className={(navData) =>
-                    navData.isActive
-                      ? "header-nav__item-link header-nav__isActive"
-                      : "header-nav__item-link"
-                  }
-                >
+                <NavLink to="/" className={activeLinkHighlight}>
                   {" "}
                   HOME{" "}
                 </NavLink>
               </li>
               <li className="header-nav__item js-header-nav__myLib">
-                <NavLink
-                  to="/library"
-                  className={(navData) =>
-                    navData.isActive
-                      ? "header-nav__item-link header-nav__isActive"
-                      : "header-nav__item-link"
-                  }
-                >
+                <NavLink to="/library" className={activeLinkHighlight}>
                   {" "}
                   MY LIBRARY{" "}
                 </NavLink>
